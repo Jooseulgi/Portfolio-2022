@@ -12,7 +12,7 @@ const pages = [
         hash: true,
         append: false,
         tags: [
-            '/assets/css/style.css',
+            './assets/css/style.css',
             '/static/vendor/modernizr-detectizr.js'
         ]
     }),
