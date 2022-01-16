@@ -4,24 +4,24 @@
     font-family: 'Prompt medium';
     font-style: normal;
     font-weight: 500;
-    src: url('/static/fonts/Prompt-Medium.woff2') format('woff2'),
-         url('/static/fonts/Prompt-Medium.woff') format('woff');
+    src: url('../../static/fonts/Prompt-Medium.woff2') format('woff2'),
+         url('../../static/fonts/Prompt-Medium.woff') format('woff');
 }
 
 @font-face {
     font-family: 'Prompt semibold';
     font-style: normal;
     font-weight: 600;
-    src: url('/static/fonts/Prompt-SemiBold.woff2') format('woff2'),
-         url('/static/fonts/Prompt-SemiBold.woff') format('woff');
+    src: url('../../static/fonts/Prompt-SemiBold.woff2') format('woff2'),
+         url('../../static/fonts/Prompt-SemiBold.woff') format('woff');
 }
 
 @font-face {
     font-family: 'Prompt bold';
     font-style: normal;
     font-weight: 700;
-    src: url('/static/fonts/Prompt-Bold.woff2') format('woff2'),
-        url('/static/fonts/Prompt-Bold.woff') format('woff');
+    src: url('../../static/fonts/Prompt-Bold.woff2') format('woff2'),
+        url('../../static/fonts/Prompt-Bold.woff') format('woff');
 }
 
 /*header*/
@@ -184,7 +184,7 @@ header{
     @each $num, $name in $nav-bg{
         .list-item#{$num}{
             .thumb-img{
-                background: url('/static/img/#{$name}.jpg') center no-repeat;
+                background: url('../../static/img/#{$name}.jpg') center no-repeat;
                 background-size: cover;
             }
         }
@@ -345,7 +345,7 @@ header{
     background: #000;
     transition: transform 0.9s cubic-bezier(0.785, 0.135, 0.15, 0.86);
     &.up{
-        transform: translateY(18%);
+        transform: translateY(15%);
     }
 }
 
@@ -375,7 +375,6 @@ header{
             width: 2px;
             height: 0%;
             background: #dedede;
-            transition: 0.5s;
         }
         .work-title{
             overflow: hidden;
@@ -472,7 +471,7 @@ header{
     @each $num, $name in $thumb-img{
         .work-item#{$num}{
             .thumb-img{
-                background: url('/static/img/#{$name}.png') center no-repeat;
+                background: url('../../static/img/#{$name}.png') center no-repeat;
                 background-size: cover;
             }
         }
@@ -481,6 +480,8 @@ header{
         .work-con{
             &:after{
                 height: 60vh;
+                transition: height 0.5s;
+
             }
             .work-title{
                 h2{
@@ -518,14 +519,14 @@ header{
 /*contact-sec*/
 .contact{
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     .contact-con{
         display: flex;
         justify-content: space-between;
-        position: absolute;
-        top: 55%;
-        left: 50%;
-        width: 68%;
-        transform: translate(-50%, -50%);
+        width: 69%;
+        margin-top: 3vw;
         color: #333;
         font-weight: 700;
         .contact-text{
@@ -634,9 +635,8 @@ header{
             }
         }
         .icon{
+            position: relative;
             margin-top: 2.2vw;
-            display: flex;
-            flex-direction: column;
             width: 4%;
             text-align: right;
             a{
@@ -648,9 +648,12 @@ header{
                 }
             }
             p{
+                position: absolute;
+                top: 400px;
+                right: 0;
                 width: 262px;
                 transform: rotate(90deg);
-                transform-origin: 1vw 2vw;
+                transform-origin: right top;
                 color: #222;
                 font-weight: 500;  
             }
@@ -1099,6 +1102,7 @@ header{
     .contact{
         .contact-con{
             width: 90%;
+            flex-direction: column;
             .contact-text{
                 text-align: center;
                 .touch-box{
@@ -1107,7 +1111,7 @@ header{
                         font-size: 12vw;
                     }
                     .heart{
-                        width: 50px;
+                        width: 60px;
                         height: 60px;
                         &:after{
                             top: 0px;
@@ -1130,7 +1134,7 @@ header{
             .form{
                 // float: none;
                 width: 85%;
-                margin: 70px auto 23px;
+                margin: 50px auto 23px;
                 > div{
                     margin-bottom: 17px;
                     label{
@@ -1153,6 +1157,7 @@ header{
             }
             .icon{
                 position: static;
+                width: 100%;
                 margin-bottom: 20px;
                 text-align: center;
                 a{
