@@ -38,10 +38,11 @@ header{
         display: inline-block;
         h1{
             opacity: 0;
-            transform: translateX(-150%);
+            transform: translate3d(-150%,0,0);
             a{
                 font-size: 28px;
-                line-height: 48px;
+                line-height:1.5;
+                //line-height: 48px;
             }
         }    
     }
@@ -53,11 +54,12 @@ header{
             .work-btn{
                 opacity: 0;
                 display: block;
-                transform: translateX(-150%);
+                transform: translate3d(-150%,0,0);
                 font-size: 20px;
                 font-weight: 500;
                 font-size: 24px;
-                line-height: 48px;
+                line-height:1.5;
+                //line-height: 48px;
                 &:before{
                     content: "";
                     opacity: 0;
@@ -213,10 +215,10 @@ header{
                 background: #111;
             }
             &:nth-child(1){
-                transform: translate(-50%, -50%) rotate(45deg);
+                transform: translate3d(-50%, -50%, 0) rotate(45deg);
             }
             &:nth-child(2){
-                transform: translate(-50%, -50%) rotate(-45deg);
+                transform: translate3d(-50%, -50%, 0) rotate(-45deg);
             }
             &:nth-child(3),
             &:nth-child(4){
@@ -224,7 +226,7 @@ header{
                 top: 50%;
                 left: 50%;
                 background: #fff;
-                transform: translate(-50%, -50%);
+                transform: translate3d(-50%, -50%, 0);
             }
             &:nth-child(3){
                 width: 13px;
@@ -249,9 +251,9 @@ header{
         position: absolute;
         top: 50%;
         left: 15vw;
-        transform: translateY(-50%);
+        transform: translate3d(0,-50%,0);
     }
-    .head-text-con{
+    .text-box{
         font-size: 7.23vw;
         font-weight: 700;
         line-height: 1.2;
@@ -261,9 +263,9 @@ header{
             overflow: hidden;
         }
         div{
-            p{
+            h2{
                 opacity: 0;
-                transform: translateY(150%) rotate(10deg);
+                transform: translate3d(0,150%,0) rotate(10deg);
                 line-height: 1.2;
             }
         }
@@ -274,9 +276,9 @@ header{
             position: absolute;
             top: 50%;
             right: -39px;
-            transform: rotate(90deg) translateY(-50%);
+            transform: translate3d(0,-50%,0) rotate(90deg);
             p{
-                transform: translate(0, 100%);
+                transform: translate3d(0, 100%, 0);
                 color: #ccc;
             }
         }
@@ -285,9 +287,9 @@ header{
             position: absolute;
             top: 50%;
             left: 54px;
-            transform: translate(0, -50%);
+            transform: translate3d(0, -50%, 0);
             ul{
-                transform: translate(110%, 0);
+                transform: translate3d(110%, 0, 0);
                 li{
                     margin-bottom: 25px;
         
@@ -307,8 +309,8 @@ header{
         color: #cecece;
         p{
             opacity: 0;
-            transform: translateY(150%) rotate(10deg);
-            line-height: 20px;
+            transform: translate3d(0,150%,0) rotate(10deg);
+            line-height: 1.3;
         }
     }
     .scroll-wrap{
@@ -327,7 +329,7 @@ header{
             position: absolute;
             right: 0;
             color: #999;
-            transform: translate(110%, -50%);
+            transform: translate3d(110%, -50%,0);
             .line{
                 animation: scrollbar 1.4s infinite;
             }
@@ -341,11 +343,11 @@ header{
     z-index: -1;
     width: 100%;
     height: 100vh;
-    transform: translateY(100%);
+    transform: translate3d(0,100%,0);
     background: #000;
     transition: transform 0.9s cubic-bezier(0.785, 0.135, 0.15, 0.86);
     &.up{
-        transform: translateY(15%);
+        transform: translate3d(0,15%,0);
     }
 }
 
@@ -366,14 +368,16 @@ header{
         height: 71vh;
         margin-left: 15%;
         top: 50%;
-        transform: translateY(-50%);
+        transform: translate3d(0,-50%,0);
         &:after{
             content: "";
             display: block;
             position: absolute;
             right: 0;
             width: 2px;
-            height: 0%;
+            height:0;
+            //height: 60vh;
+            //transform: translate3d(0, -100vh, 0);
             background: #dedede;
         }
         .work-title{
@@ -382,12 +386,12 @@ header{
             left: 0;
             z-index: 50;
             text-transform: uppercase;
-            transform: rotate(-90deg) translateX(-80%);
+            transform: translate3d(0,300%,0) rotate(-90deg);
             transform-origin: left;
             h2{
-                transition: transform 1s .5s;
                 font-size: 6.4vw;
-                transform: translateY(-100%);
+                transform: translate3d(0, -100%, 0);
+                //transform: translateY(-100%);
                 &.small{
                     font-size: 5vw;
                 }
@@ -413,7 +417,6 @@ header{
                 height: 100%;
                 background-size: cover;
                 background-position: center;
-                transition: .8s 0.5s;
             }
         }
         .info-text{
@@ -427,21 +430,25 @@ header{
             color: #888;
             span{
                 display: block;
-                transform: translateY(-30px);
-                transition: transform 1s 0.8s;
+                transform: translate3d(0, -30px, 0);
+                //transform: translateY(-30px);
             }
         }
         .btn{
             opacity: 0;
             position: absolute;
-            right: -150px;
+            right: -112px;
             bottom: 0;
             width: 225px;
             height: 62px;
-            background: rgba(0, 0, 0, 0.7);
-            line-height: 62px;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translate3d(10%,0,0);
+            //line-height:62px;
+            //text-align: center;
             text-transform: uppercase;
+            background: rgba(0, 0, 0, 0.7);
             letter-spacing: 3px;
             color: #fff;
         }
@@ -451,7 +458,8 @@ header{
         right: 0;
         top: 50%;
         width: 19vw;
-        transform: translateY(-50%) rotate(90deg);
+        transform: translate3d(0, -50%, 0) rotate(90deg);
+        //transform: translateY(-50%) rotate(90deg);
         path{
             stroke-dasharray: 300;
             stroke-dashoffset: 300;
@@ -480,12 +488,13 @@ header{
         .work-con{
             &:after{
                 height: 60vh;
+                //transform: translate3d(0,0,0);
                 transition: height 0.5s;
-
             }
             .work-title{
                 h2{
-                    transform: translateY(0);
+                    transform: translate3d(0,0,0);
+                    transition: transform 1s .5s;
                 }  
             }
             .work-thumb{
@@ -495,17 +504,19 @@ header{
                 .thumb-img{
                     opacity: 1;
                     right: -112px;
+                    transition: .8s 0.5s;
                 }
             }
             .info-text{
                 span{
-                    transform: translateY(0);
+                    transform: translate3d(0,0,0);
+                    transition: transform 1s 0.8s;
                 }
             }
             .btn{
                 opacity: 1;
-                right: -112px;
-                transition: right 0.5s 0.6s, opacity 0.5s 0.6s;
+                transform: translate3d(0,0,0);
+                transition: transform 0.5s 0.6s, opacity 0.5s 0.6s;
             }
         }
         .svg-num{
@@ -590,7 +601,6 @@ header{
             }
         }
         .form{
-            //float: right;
             width: 36%;
             margin-left: 17%;
             > div{
@@ -691,7 +701,7 @@ header{
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate3d(-50%, -50%, 0);
         }
     }
     h2{
@@ -706,7 +716,7 @@ header{
         text-indent: 75px;
         letter-spacing: 50px;
         text-align: center;
-        transform: translateY(100%) rotate(30deg);
+        transform: translate3d(0,100%,0) rotate(30deg);
     }
 }
 .brief{
@@ -727,7 +737,8 @@ header{
         }
         .brief-text{
             margin: 30px 0 70px;
-            line-height: 30px;
+            //line-height: 30px;
+            line-height:2;
         }
     }
     .description{
@@ -735,9 +746,9 @@ header{
         flex-wrap: wrap;
         justify-content: center;
         dl{
-            margin-right: 50px;
+            margin: 0 25px 20px;
             &:last-child{
-                margin-right: 0;
+                margin: 0;
             }
             dt{
                 margin-bottom: 20px;
@@ -748,7 +759,7 @@ header{
                 font-size: 14px;
 
                 a{
-                color: #fff;
+                    color: #fff;
                 }
             }
         }
@@ -759,34 +770,30 @@ header{
     width: 65%;
     text-align: center;
     .motion{
-        opacity: 0;
-        transform: translateY(50px);
-        transition: .8s;
         margin-bottom: 80px;
-        &.active{
-            opacity: 1;
-            transform: translateY(0);
-        }
-        img{
-            box-shadow: 2px 5px 12px 0px #d4cece;
-        }
-        ul{
-            display: flex;
-            justify-content: space-between;
-            overflow: hidden;
-            li{
-                width: 30%;
-                max-height: 676px;
-            }
+    }
+    img{
+        box-shadow: 2px 5px 12px 0px #d4cece;
+    }
+    ul{
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        li{
+            width: 30%;
+            max-height: 676px;
         }
     }
-    // span{
-    //     position: absolute;
-    //     transform: translateX(-50%);
-    //     font-size: 53px;
-    //     font-weight: 700;
-    // }
+}
 
+.motion{
+    opacity: 0;
+    transform: translate3d(0,50px,0);
+    transition: .8s;
+    &.active{
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }   
 }
 
 
@@ -814,7 +821,7 @@ header{
                 width: 0;
                 height: 2px;
                 background: #fff;
-                transform: translate(-50%, -50%);
+                transform: translate3d(-50%, -50%, 0);
                 transition: .3s;
             }
             &:hover{
@@ -828,7 +835,7 @@ header{
     }
     .trans-bg{
         &.up{
-            transform: translateY(0);
+            transform: translate3d(0,0,0);
         }
     }
 }
@@ -903,10 +910,10 @@ header{
 /*animation*/
 @keyframes bounce{
     0%{
-        transform: translate(0, 0);
+        transform: translate3d(0, 0, 0);
     }
     100%{
-        transform: translate(25px, 0px);
+        transform: translate3d(25px, 0, 0);
     }
 }
 @keyframes beat{
@@ -945,11 +952,11 @@ header{
 }
 @keyframes scrollbar{
     0%{
-        transform: translateY(-1px);
+        transform: translate3d(0,-1px,0);
     }
 
     100%{
-        transform: translateY(4px);
+        transform: translate3d(0,4px,0);
         opacity: 0;
     }
 }
@@ -970,9 +977,9 @@ header{
 
 @media screen and (max-width: 1280px){
     .intro{
-        .head-text-con{
+        .text-box{
             div{
-                p{
+                h2{
                     font-size: 11.2vw;
                 }
             }
@@ -995,7 +1002,7 @@ header{
     }
     .trans-bg{
         &.up{
-            transform: translateY(10%);
+            transform: translate3d(0,10%,0);
         }
     }
 }
@@ -1017,9 +1024,9 @@ header{
         padding: 0 8vw;
     }
     .intro{
-        .head-text-con{
+        .text-box{
             div{
-                p{
+                h2{
                     margin-bottom: 7vw;
                 }
             }
@@ -1056,7 +1063,7 @@ header{
             width: 75%;
             height: 70vh;
             margin-left: 0;
-            transform: translate(-50%, -50%);
+            transform: translate3d(-50%, -50%, 0);
             &:after{
                 display: none;
             }
@@ -1079,7 +1086,7 @@ header{
                 bottom: 6vh;
                 width: 150px;
                 height: 50px;
-                line-height: 50px;
+                //line-height: 50px;
                 font-size: 12px;
             }
         }
@@ -1093,11 +1100,11 @@ header{
             bottom: 20vh;
             right: 13px;
             width: 27vw;
-            transform: translateY(0) rotate(0);
+            transform: translate3d(0,0,0) rotate(0);
         }
     }
     .trans-bg.up{
-        transform: translateY(0);
+        transform: translate3d(0,0,0);
     }
     .contact{
         .contact-con{
@@ -1132,7 +1139,6 @@ header{
                 }
             }
             .form{
-                // float: none;
                 width: 85%;
                 margin: 50px auto 23px;
                 > div{
@@ -1156,7 +1162,9 @@ header{
                 }
             }
             .icon{
-                position: static;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 width: 100%;
                 margin-bottom: 20px;
                 text-align: center;
@@ -1203,22 +1211,23 @@ header{
         }
     }
     .brief{
-        padding: 40px 3% 20px;
+        padding: 40px 3%;
         .title{
             .project{
             padding-bottom: 15px;
             font-size: 20px;
             }
             .brief-text{
-            margin: 20px 0 45px;
-            font-size: 14px;
-            line-height: 24px;
+                margin: 20px 0 45px;
+                font-size: 14px;
+                line-height:1.8;
+                //line-height: 24px;
             }
         }
         .description{
-            flex: 0 50%;
-            margin: 0 0 20px 0;
             dl{
+                flex: 0 50%;
+                margin: 0 0 20px 0;
                 dd{
                     margin-bottom: 10px;
                     font-size: 12px;
@@ -1231,7 +1240,7 @@ header{
         height: 15vh;
         .index{
             a{
-            line-height: 15vh;
+                line-height: 15vh;
             }
         }
     }
@@ -1261,14 +1270,14 @@ header{
     .intro{
         .bot-text{
             p{
-                line-height: 16px;
+                line-height:1.6;
             }
         }
         .scroll-wrap{
             svg{
                 width: 40px;
                 height: 40px;
-                transform: translate(95%, -50%);
+                transform: translate3d(95%, -50%, 0);
             }
         }
     }
@@ -1277,7 +1286,7 @@ header{
             .btn{
                 width: 125px;
                 height: 40px;
-                line-height: 40px;
+                //line-height: 40px;
                 letter-spacing: 1px;
             }
         }

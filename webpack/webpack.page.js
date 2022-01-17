@@ -70,22 +70,7 @@ const pages = [
         filename:'w5.html',
         HTML_PATH: folderPath
     }),
-
-    // ['index', 'w1', 'w2', 'w3', 'w4', 'w5'].forEach((file) => {
-    //     console.log(file);
-    //     new HtmlWebPackPlugin({
-    //         title : 'Portfolio',
-    //         hash: true,
-    //         template: `./src/${file}.html`,
-    //         filename: `${file}.html`,
-    //         chunks: ['index','style'],
-    //         HTML_PATH: folderPath
-    //     })
-    // })
-    //https://stackoverflow.com/questions/50665176/combine-htmlwebpackplugin-chunks
 ];
-
-
 
 module.exports = pages;
 

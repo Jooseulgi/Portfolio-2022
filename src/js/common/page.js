@@ -57,7 +57,7 @@ export default class page{
 
     setBgTrans(y){
         const transBg = document.querySelector('.trans-bg');
-        if( y >=  this.documentHeight - this.windowHeight){
+        if( y >=  this.documentHeight - this.windowHeight - 5){
             transBg.classList.add('up');
         }
         else {
@@ -67,7 +67,7 @@ export default class page{
 
     setIntroTxtMotion(y){
         if(this.mainPage){
-            const introTxt = document.querySelectorAll('.head-text-con, .bot-text');
+            const introTxt = document.querySelectorAll('.text-box, .bot-text');
             const scrollWrap = document.querySelector('.scroll-wrap');
             const work = document.querySelector('.work');
             introTxt.forEach((el) => {            
@@ -75,7 +75,7 @@ export default class page{
             });
             scrollWrap.setAttribute('style','opacity:'+(1-y/550)+';');
             if(y >= work.offsetTop) {     
-                document.querySelector('.head-text-con').setAttribute('style','transform:translate3d(0px, -2%, 0px) skew(0deg, 6deg); opacity:0;');
+                document.querySelector('.text-box').setAttribute('style','transform:translate3d(0px, -2%, 0px) skew(0deg, 6deg); opacity:0;');
             }
         }
         else{
@@ -88,7 +88,7 @@ export default class page{
             const tl =  gsap.timeline();
             tl.staggerTo('header h1, header .work-btn',1.4,{opacity:1, x:0,ease:'power2.out'},0.2)
                 .to('.intro .trans-text',0.7,{x:0,y:0,ease:'power2.out'},"-=1")
-                .staggerTo('.head-text p, .bot-text p',1.3,{opacity:1,y:0,rotation:0,ease:'power2.out'},0.2,"-=0.7")
+                .staggerTo('.head-text h2, .bot-text p',1.3,{opacity:1,y:0,rotation:0,ease:'power2.out'},0.2,"-=0.7")
                 .to('.scroll-wrap span',1.3,{width:'100%',ease:'power2.out'},"-=0.7")
                 .to('.scroll-wrap svg',0.8,{opacity:1},"-=0.5");
         }
@@ -174,9 +174,7 @@ export default class page{
                 let documentHeight = document.body.clientHeight;
                 let scrollVal = window.pageYOffset;
                 let percent = (scrollVal / (documentHeight - viewportHeight)) * 100;
-            
                     indicator.style.top = percent + '%';
-                
             }, 5);
             moveIndicator();
         });
