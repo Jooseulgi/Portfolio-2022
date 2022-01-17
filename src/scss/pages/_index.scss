@@ -386,7 +386,7 @@ header{
             left: 0;
             z-index: 50;
             text-transform: uppercase;
-            transform: translate3d(0,300%,0) rotate(-90deg);
+            transform: rotate(-90deg) translate3d(-80%,0,0);
             transform-origin: left;
             h2{
                 font-size: 6.4vw;
