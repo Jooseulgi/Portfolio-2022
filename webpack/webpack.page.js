@@ -13,7 +13,7 @@ const pages = [
         append: false,
         tags: [
             './assets/css/style.css',
-            '/static/vendor/modernizr-detectizr.js'
+            './static/vendor/modernizr-detectizr.js'
         ]
     }),
 
