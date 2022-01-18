@@ -4514,11 +4514,9 @@ var page = /*#__PURE__*/function () {
   function page() {
     _classCallCheck(this, page);
 
-    this.documentHeight = document.body.clientHeight;
-    this.windowHeight = window.innerHeight;
     this.body = document.querySelector('body');
     this.mainPage = document.querySelector('.main-wrap');
-    this.subPage = document.querySelector('.work-page');
+    this.subPage = document.querySelector('.work-wrap');
     this.init();
   }
 
@@ -4530,6 +4528,11 @@ var page = /*#__PURE__*/function () {
       window.addEventListener('scroll', function () {
         _this.onScrollHandler();
       });
+      window.addEventListener('resize', function () {
+        _this.onResizeHandler();
+      });
+      this.onResizeHandler();
+      this.onScrollHandler();
       this.setIeError();
       this.setMenuToggle();
       this.setCursor();
@@ -4546,6 +4549,13 @@ var page = /*#__PURE__*/function () {
         document.querySelector('body').style.display = 'none';
         alert('IE는 지원하지 않습니다');
       }
+    }
+  }, {
+    key: "onResizeHandler",
+    value: function onResizeHandler() {
+      this.scrollValue = window.pageYOffset;
+      this.documentHeight = document.body.clientHeight;
+      this.windowHeight = window.innerHeight;
     }
   }, {
     key: "onScrollHandler",
@@ -4580,8 +4590,16 @@ var page = /*#__PURE__*/function () {
     key: "setBgTrans",
     value: function setBgTrans(y) {
       var transBg = document.querySelector('.trans-bg');
+      var parentEl = transBg.closest('section');
+      console.dir(parentEl.clientHeight); // console.log(elTop.getBoundingClientRect());
+      // if( y >=  this.documentHeight - this.windowHeight - parentEl.clientHeight/2){
+      //     transBg.classList.add('up');
+      // }
+      // else{
+      //     transBg.classList.remove('up');
+      // }
 
-      if (y >= this.documentHeight - this.windowHeight - 5) {
+      if (y >= parentEl.offsetTop - this.windowHeight / 1) {
         transBg.classList.add('up');
       } else {
         transBg.classList.remove('up');
