@@ -2,16 +2,17 @@ import {gsap} from "gsap";
 
 export default class page{
     constructor() {
-        this.documentHeight = document.body.clientHeight;
-        this.windowHeight = window.innerHeight;
         this.body = document.querySelector('body');
         this.mainPage = document.querySelector('.main-wrap');
-        this.subPage = document.querySelector('.work-page');
+        this.subPage = document.querySelector('.work-wrap');
         this.init();
     }
 
     init() {
         window.addEventListener('scroll',()=>{this.onScrollHandler();});
+        window.addEventListener('resize',()=>{this.onResizeHandler();});
+        this.onResizeHandler();
+        this.onScrollHandler();
         this.setIeError();
         this.setMenuToggle();
         this.setCursor();
@@ -26,6 +27,12 @@ export default class page{
             document.querySelector('body').style.display = 'none';
             alert('IE는 지원하지 않습니다'); 
         }
+    }
+
+    onResizeHandler(){
+        this.scrollValue = window.pageYOffset;
+        this.documentHeight = document.body.clientHeight;
+        this.windowHeight = window.innerHeight;
     }
 
     onScrollHandler(){
@@ -57,12 +64,22 @@ export default class page{
 
     setBgTrans(y){
         const transBg = document.querySelector('.trans-bg');
-        if( y >=  this.documentHeight - this.windowHeight - 5){
+        const parentEl = transBg.closest('section');
+        console.dir(parentEl.clientHeight);
+        // console.log(elTop.getBoundingClientRect());
+        // if( y >=  this.documentHeight - this.windowHeight - parentEl.clientHeight/2){
+        //     transBg.classList.add('up');
+        // }
+        // else{
+        //     transBg.classList.remove('up');
+        // }
+        if(y >= parentEl.offsetTop - this.windowHeight / 1){
             transBg.classList.add('up');
         }
         else {
             transBg.classList.remove('up');
         }
+        
     }
 
     setIntroTxtMotion(y){
